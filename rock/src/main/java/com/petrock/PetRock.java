@@ -1,7 +1,7 @@
 package com.petrock;
 
 
-import junit.*;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -146,5 +146,22 @@ class PetRock {
             return null;
         }
     }
+
+    public int getHunger(){
+        return hunger;
+    }
+
+    public int getBoredom(){
+        return boredom;
+    }
+
+    public int getEnergy(){
+        return energy;
+    }
+
+    public String getMood(){
+        return mood;
+    }
+
 }
 
