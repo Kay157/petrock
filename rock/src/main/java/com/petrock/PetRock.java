@@ -20,7 +20,9 @@ class PetRock {
     public boolean canFeed = true;
     public boolean canPlay = true;
     public int zeroEnergyTurns = 0;
-    
+    public int seed = 2;
+
+
     public PetRock(String name) {
         this.name = name;
         this.hunger = 3;
@@ -86,7 +88,7 @@ class PetRock {
         System.out.println("Energy: " + energy + "\n");
     }
     
-    private void updateMood() {
+    public void updateMood() {
         if (energy <= 2) {
             mood = "Tired";
         } else if (hunger < 4 && boredom < 4 && energy > 3) {
@@ -98,7 +100,7 @@ class PetRock {
         }
     }
     
-    private void advanceTurn() {
+    public void advanceTurn() {
         hunger = Math.min(10, hunger + 1);
         boredom = Math.min(10, boredom + 1);
         if (energy == 0) {
@@ -116,8 +118,8 @@ class PetRock {
     
     }
     
-    private void randomEvent() {
-        Random rand = new Random();
+    public void randomEvent() {
+        Random rand = new Random(seed);
         int event = rand.nextInt(10);
         if (event == 1) {
             System.out.println("Your rock found a shiny pebble! It's happier now!");
