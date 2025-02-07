@@ -119,18 +119,18 @@ class PetRock {
     }
     
     public void randomEvent() {
-        Random rand = new Random(seed);
-        int event = rand.nextInt(10);
-        if (event == 1) {
+        Random rand = new Random();
+        seed = rand.nextInt(10);
+        if (seed == 1) {
             System.out.println("Your rock found a shiny pebble! It's happier now!");
             boredom = Math.max(0, boredom - 2);
-        } else if (event == 2) {
+        } else if (seed == 2) {
             System.out.println("Your rock got some extra sleep! Energy restored!");
             energy = Math.min(10, energy + 2);
-        } else if (event == 3) {
+        } else if (seed == 3) {
             System.out.println("Your rock is scared by a sudden noise! Boredom increased!");
             boredom = Math.min(10, boredom + 2);
-        } else if (event == 4) {
+        } else if (seed == 4) {
             System.out.println("Your rock is grumpy today. Hunger increased!");
             hunger = Math.min(10, hunger + 2);
         }
