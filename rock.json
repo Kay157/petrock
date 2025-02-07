@@ -1,0 +1,10 @@
+{
+  "name": "Timmy",
+  "mood": "Sad",
+  "hunger": 5,
+  "boredom": 7,
+  "energy": 3,
+  "canFeed": false,
+  "canPlay": true,
+  "zeroEnergyTurns": 0
+}
