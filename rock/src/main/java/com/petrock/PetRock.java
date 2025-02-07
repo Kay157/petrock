@@ -20,7 +20,7 @@ class PetRock {
     public boolean canFeed = true;
     public boolean canPlay = true;
     public int zeroEnergyTurns = 0;
-    public int seed = 2;
+    public int seed = 0;
 
 
     public PetRock(String name) {

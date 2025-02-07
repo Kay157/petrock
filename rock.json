@@ -6,5 +6,6 @@
   "energy": 3,
   "canFeed": false,
   "canPlay": true,
-  "zeroEnergyTurns": 0
+  "zeroEnergyTurns": 0,
+  "seed": 0
 }

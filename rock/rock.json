@@ -1,0 +1,11 @@
+{
+  "name": "Rocky Test",
+  "mood": "Happy",
+  "hunger": 3,
+  "boredom": 2,
+  "energy": 6,
+  "canFeed": true,
+  "canPlay": true,
+  "zeroEnergyTurns": 0,
+  "seed": 0
+}
