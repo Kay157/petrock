@@ -20,7 +20,9 @@ class PetRock {
     public boolean canFeed = true;
     public boolean canPlay = true;
     public int zeroEnergyTurns = 0;
-    
+    public int seed = 0;
+
+
     public PetRock(String name) {
         this.name = name;
         this.hunger = 3;
@@ -86,7 +88,7 @@ class PetRock {
         System.out.println("Energy: " + energy + "\n");
     }
     
-    private void updateMood() {
+    public void updateMood() {
         if (energy <= 2) {
             mood = "Tired";
         } else if (hunger < 4 && boredom < 4 && energy > 3) {
@@ -98,7 +100,7 @@ class PetRock {
         }
     }
     
-    private void advanceTurn() {
+    public void advanceTurn() {
         hunger = Math.min(10, hunger + 1);
         boredom = Math.min(10, boredom + 1);
         if (energy == 0) {
@@ -116,19 +118,19 @@ class PetRock {
     
     }
     
-    private void randomEvent() {
+    public void randomEvent() {
         Random rand = new Random();
-        int event = rand.nextInt(10);
-        if (event == 1) {
+        seed = rand.nextInt(10);
+        if (seed == 1) {
             System.out.println("Your rock found a shiny pebble! It's happier now!");
             boredom = Math.max(0, boredom - 2);
-        } else if (event == 2) {
+        } else if (seed == 2) {
             System.out.println("Your rock got some extra sleep! Energy restored!");
             energy = Math.min(10, energy + 2);
-        } else if (event == 3) {
+        } else if (seed == 3) {
             System.out.println("Your rock is scared by a sudden noise! Boredom increased!");
             boredom = Math.min(10, boredom + 2);
-        } else if (event == 4) {
+        } else if (seed == 4) {
             System.out.println("Your rock is grumpy today. Hunger increased!");
             hunger = Math.min(10, hunger + 2);
         }
