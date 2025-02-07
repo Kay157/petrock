@@ -6,18 +6,20 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 class PetRock {
-    private String name;
-    private String mood;
-    private int hunger;
-    private int boredom;
-    private int energy;
-    private boolean canFeed = true;
-    private boolean canPlay = true;
-    private int zeroEnergyTurns = 0;
+    public String name;
+    public String mood;
+    public int hunger;
+    public int boredom;
+    public int energy;
+    public boolean canFeed = true;
+    public boolean canPlay = true;
+    public int zeroEnergyTurns = 0;
     
     public PetRock(String name) {
         this.name = name;
@@ -27,11 +29,18 @@ class PetRock {
         updateMood();
     }
     
+    public String getName() { return name; }
+    public String getMood() { return mood; }
+    public int getHunger() { return hunger; }
+    public int getBoredom() { return boredom; }
+    public int getEnergy() { return energy; }
+    public boolean canFeed() { return canFeed; }
+    public boolean canPlay() { return canPlay; }
+
+   
+
     public void feed() {
-        if (!canFeed) {
-            System.out.println("You must wait before feeding again!");
-            return;
-        }
+        if (!canFeed) return;
         if (energy > 0) {
             hunger = Math.max(0, hunger - 2);
             boredom = Math.min(10, boredom + 1);
@@ -39,8 +48,6 @@ class PetRock {
             canFeed = false;
             canPlay = true;
             advanceTurn();
-        } else {
-            System.out.println(name + " is too tired to eat!");
         }
     }
     
@@ -106,6 +113,7 @@ class PetRock {
         randomEvent();
         updateMood();
         saveToFile();
+    
     }
     
     private void randomEvent() {
